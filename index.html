@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/site.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true" data-liquid-ignore></div>
     <div class="cursor" aria-hidden="true"><span></span></div>
     <div class="scroll-meter" aria-hidden="true"></div>
 
@@ -30,15 +30,20 @@
         <span>ORCHI</span>
         <small>MEDIA</small>
       </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#services" data-cursor="VIEW">Services</a>
-        <a href="#work" data-cursor="VIEW">Work</a>
-        <a href="#method" data-cursor="VIEW">Method</a>
-        <a href="#contact" data-cursor="VIEW">Contact</a>
+      <nav class="main-nav liquid-glass-nav" aria-label="Primary navigation">
+        <div class="nav-content">
+          <div class="nav-indicator-pill" aria-hidden="true"></div>
+          <a href="#services" data-cursor="VIEW">Services</a>
+          <a href="#work" data-cursor="VIEW">Work</a>
+          <a href="#method" data-cursor="VIEW">Method</a>
+          <a href="#contact" data-cursor="VIEW">Contact</a>
+        </div>
       </nav>
-      <div class="header-meta">
-        <span></span>
-        Bengaluru, India
+      <div class="header-meta header-meta-pill" data-cursor="LOCATION">
+        <span class="pill-meta-content">
+          <span></span>
+          Bengaluru, India
+        </span>
       </div>
       <button class="menu-line" type="button" aria-label="Open navigation" data-cursor="MENU">
         <i></i><i></i><i></i>
@@ -62,104 +67,188 @@
             <p>Color Grading</p>
             <p>Art Direction</p>
           </div>
-          <div class="hero-frame z-3" data-depth="2">
-            <span>01</span>
-            <span>Opening Shot</span>
-          </div>
-          <a class="showreel" href="#services" data-cursor="PLAY">
-            <span></span>
-            Showreel
-          </a>
         </div>
       </section>
 
       <section class="services scene" id="services" data-scene>
         <p class="kicker reveal"><span>01</span> / What we do</p>
         <div class="services-intro">
-          <h2 class="reveal" data-split>A marketing agency does <em>one thing:</em> make people care.</h2>
-          <p class="lede reveal">Everything else is logistics. We find what makes your brand impossible to ignore, then build the strategy, the stories and the distribution to put it in front of the right people — and turn their attention into revenue.</p>
+          <h2 class="reveal" data-split>We turn brands into the <em>conversation.</em></h2>
+          <p class="lede reveal">From sharp positioning to ideas that travel, we build marketing that makes people stop, pay attention, and take action. No noise. No forgettable campaigns. Just work that moves brands forward.</p>
+          
+          <div class="services-pillars reveal">
+            <span class="pillar">STRATEGY</span>
+            <span class="pillar-sep">/</span>
+            <span class="pillar">CREATIVE</span>
+            <span class="pillar-sep">/</span>
+            <span class="pillar">BRAND</span>
+            <span class="pillar-sep">/</span>
+            <span class="pillar">GROWTH</span>
+          </div>
+
+          <div class="services-circling-wrap reveal">
+            <a class="circling-badge" href="#service-01" data-cursor="EXPLORE" aria-label="Explore Strategy, Creative, Brand, Growth">
+              <div class="circling-orbit-ring" aria-hidden="true"></div>
+              <div class="circling-text-ring">
+                <svg viewBox="0 0 200 200" class="circling-svg" aria-hidden="true">
+                  <defs>
+                    <path id="servicesCirclePath" d="M 100, 100 m -68, 0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0" fill="none" />
+                  </defs>
+                  <text class="circling-svg-text">
+                    <textPath href="#servicesCirclePath" startOffset="0%">
+                      STRATEGY • CREATIVE • BRAND • GROWTH • 
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+              <div class="circling-center">
+                <div class="circling-center-glass">
+                  <svg class="circling-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
         <ol class="service-list">
-          <li class="service reveal">
+          <li class="service reveal" id="service-01">
             <div class="service-text">
               <p class="service-num"><span>01</span></p>
               <h3 data-split>Brand Strategy</h3>
               <p class="service-tag"><em>Positioning before pixels.</em></p>
-              <p class="service-copy">Before a single frame is shot, we decide what your brand stands for, who it is for, and why anyone should care. Strategy is the difference between content that fills a feed and content that moves a market — it tells every photo, film and ad exactly what job it has to do.</p>
-              <ul class="service-tags">
-                <li>Positioning</li>
-                <li>Messaging</li>
-                <li>Identity systems</li>
-                <li>Brand guidelines</li>
-              </ul>
+              <div class="service-copy">
+                <p>Before a single frame is shot, we define what your brand stands for, who it speaks to, and why it deserves attention. We dive into your audience, analyse competitors, and uncover the market opportunities that others overlook. The goal is to understand not just what people buy, but what makes them choose one brand over another.</p>
+                <p>Using these insights, we build a strategic foundation that shapes your positioning, messaging, and creative direction. From defining your unique value proposition to developing a distinctive brand voice and visual identity, every element works together to create a consistent and recognisable presence.</p>
+                <div class="service-highlight">
+                  <p>We bring clarity to your brand, turn insights into purposeful creative decisions, and build a foundation for lasting relevance and sustainable growth.</p>
+                </div>
+              </div>
+              <div class="service-deliverables">
+                <p class="deliverables-heading">What We Do</p>
+                <ul class="service-tags">
+                  <li>Positioning</li>
+                  <li>Market Research</li>
+                  <li>Brand Messaging</li>
+                  <li>Creative Direction</li>
+                  <li>Identity Systems</li>
+                </ul>
+              </div>
             </div>
             <figure class="service-visual reveal-img" data-parallax>
               <img src="assets/generated/panel-brand.jpg" alt="Brand identity visual" loading="lazy" data-depth="6" />
             </figure>
           </li>
-          <li class="service reveal">
+          <li class="service reveal" id="service-02">
             <div class="service-text">
               <p class="service-num"><span>02</span></p>
               <h3 data-split>Content Production</h3>
               <p class="service-tag"><em>Stories that move.</em></p>
-              <p class="service-copy">This is the engine room. Brand films, campaign shoots, product photography and short-form content — produced in-house, directed like cinema, graded like film. In a feed of sameness, craft is the unfair advantage: people stop scrolling for things that look expensive.</p>
-              <ul class="service-tags">
-                <li>Brand films</li>
-                <li>Campaign shoots</li>
-                <li>Product photography</li>
-                <li>Short-form content</li>
-              </ul>
+              <div class="service-copy">
+                <p>We create content that captures attention, communicates value, and gives people a reason to remember your brand. From cinematic brand films and campaign shoots to product photography and short-form videos, every piece is crafted with a clear creative direction and purpose.</p>
+                <p>Our process brings together concept development, visual storytelling, professional production, and precise post-production to turn ideas into compelling visual experiences. We focus on the details that make content stand out — thoughtful composition, intentional lighting, strong narratives, and film-quality editing.</p>
+                <div class="service-highlight">
+                  <p>Whether it's building brand awareness, showcasing a product, or creating content for social media, we produce visuals that feel distinctive, connect with your audience, and make your brand impossible to overlook.</p>
+                </div>
+              </div>
+              <div class="service-deliverables">
+                <p class="deliverables-heading">What We Create</p>
+                <ul class="service-tags">
+                  <li>Brand Films</li>
+                  <li>Campaign Shoots</li>
+                  <li>Product Photography</li>
+                  <li>Short-Form Content</li>
+                  <li>Video Editing</li>
+                </ul>
+              </div>
             </div>
             <figure class="service-visual reveal-img" data-parallax>
               <img src="assets/generated/panel-content.jpg" alt="Content production visual" loading="lazy" data-depth="6" />
             </figure>
           </li>
-          <li class="service reveal">
+          <li class="service reveal" id="service-03">
             <div class="service-text">
               <p class="service-num"><span>03</span></p>
               <h3 data-split>Performance Marketing</h3>
               <p class="service-tag"><em>Attention, bought wisely.</em></p>
-              <p class="service-copy">Great creative dies without distribution. We run paid campaigns across Meta, Google and YouTube with relentless creative testing — new hooks every week, budgets flowing to what converts. Every rupee is tracked back to pipeline, not vanity metrics.</p>
-              <ul class="service-tags">
-                <li>Media buying</li>
-                <li>Creative testing</li>
-                <li>Landing pages</li>
-                <li>Reporting & attribution</li>
-              </ul>
+              <div class="service-copy">
+                <p>Great creative only works when it reaches the right people. We build and manage data-driven advertising campaigns across Meta, Google, and YouTube, combining strategic targeting with creative experimentation to turn attention into measurable business results.</p>
+                <p>From audience research and campaign planning to ad creation and budget optimisation, every decision is guided by performance. We continuously test new hooks, messaging, and creative formats to understand what resonates, eliminate wasted spend, and scale what works.</p>
+                <div class="service-highlight">
+                  <p>We track the metrics that matter — from clicks and conversions to qualified leads and customer acquisition costs — giving you a clear picture of how your marketing investment contributes to business growth.</p>
+                </div>
+              </div>
+              <div class="service-deliverables">
+                <p class="deliverables-heading">What We Do</p>
+                <ul class="service-tags">
+                  <li>Media Buying</li>
+                  <li>Creative Testing</li>
+                  <li>Audience Targeting</li>
+                  <li>Landing Page Optimisation</li>
+                  <li>Conversion Tracking</li>
+                  <li>Performance Reporting</li>
+                </ul>
+              </div>
             </div>
             <figure class="service-visual reveal-img" data-parallax>
               <img src="assets/generated/panel-digital.jpg" alt="Performance marketing visual" loading="lazy" data-depth="6" />
             </figure>
           </li>
-          <li class="service reveal">
+          <li class="service reveal" id="service-04">
             <div class="service-text">
               <p class="service-num"><span>04</span></p>
               <h3 data-split>Social Media Management</h3>
-              <p class="service-tag"><em>Never go quiet.</em></p>
-              <p class="service-copy">Brands are built in the everyday, not just at launch. We run your social as an always-on content engine — calendars, reels, community, trends — so your audience hears from you daily and your competitors start copying you instead of the other way around.</p>
-              <ul class="service-tags">
-                <li>Content calendars</li>
-                <li>Reels & shorts</li>
-                <li>Community management</li>
-                <li>Growth & trends</li>
-              </ul>
+              <p class="service-tag">
+                <em>Never go quiet.</em>
+                <span class="live-pulse" title="Always-on engine" aria-label="Always-on engine"></span>
+              </p>
+              <div class="service-copy">
+                <p>Brands are built through consistent presence, meaningful conversations, and content that gives people a reason to come back. We build and manage your social media presence with a clear strategy, turning your platforms into active communities where your brand stays relevant and top of mind.</p>
+                <p>From content planning and creative direction to reels, stories, and community engagement, we make sure every post has a purpose. We study audience behaviour, identify emerging trends, and develop platform-specific content that reflects your brand's personality while keeping your audience engaged.</p>
+                <div class="service-highlight">
+                  <p>Beyond posting, we pay attention to what works. By tracking engagement, reach, and audience growth, we continuously refine our approach to strengthen your online presence and turn followers into a community that trusts your brand.</p>
+                </div>
+              </div>
+              <div class="service-deliverables">
+                <p class="deliverables-heading">What We Do</p>
+                <ul class="service-tags">
+                  <li>Content Strategy</li>
+                  <li>Content Calendars</li>
+                  <li>Reels &amp; Shorts</li>
+                  <li>Community Management</li>
+                  <li>Trend Analysis</li>
+                  <li>Social Media Growth</li>
+                </ul>
+              </div>
             </div>
             <figure class="service-visual reveal-img" data-parallax>
               <img src="assets/generated/panel-growth.jpg" alt="Social media visual" loading="lazy" data-depth="6" />
             </figure>
           </li>
-          <li class="service reveal">
+          <li class="service reveal" id="service-05">
             <div class="service-text">
               <p class="service-num"><span>05</span></p>
               <h3 data-split>Funnels &amp; CRO</h3>
               <p class="service-tag"><em>Turn attention into revenue.</em></p>
-              <p class="service-copy">Clicks don't pay bills — customers do. We design the journey after the click: landing pages, email flows and offers engineered to convert, then we test and optimize relentlessly. This is where marketing stops being an expense and starts being a machine.</p>
-              <ul class="service-tags">
-                <li>Landing pages</li>
-                <li>Email flows</li>
-                <li>Conversion optimization</li>
-                <li>Analytics</li>
-              </ul>
+              <div class="service-copy">
+                <p>Clicks don't pay bills — customers do. We design conversion-focused journeys that guide people from their first interaction with your brand to taking meaningful action. From high-converting landing pages and strategic email sequences to compelling offers, every touchpoint is built to reduce friction and move prospects closer to a purchase.</p>
+                <p>We analyse how users interact with your website, identify where potential customers drop off, and uncover opportunities to improve the experience. Through A/B testing, behavioural insights, and continuous optimisation, we refine each stage of the funnel to improve conversion rates and make better use of your existing traffic.</p>
+                <div class="service-highlight">
+                  <p>The result is a more efficient path from discovery to decision — turning marketing spend into measurable business outcomes and helping your brand grow without relying solely on more traffic.</p>
+                </div>
+              </div>
+              <div class="service-deliverables">
+                <p class="deliverables-heading">What We Do</p>
+                <ul class="service-tags">
+                  <li>Landing Pages</li>
+                  <li>Sales Funnels</li>
+                  <li>Email Automation</li>
+                  <li>Conversion Optimisation</li>
+                  <li>A/B Testing</li>
+                  <li>Analytics</li>
+                </ul>
+              </div>
             </div>
             <figure class="service-visual reveal-img" data-parallax>
               <img src="assets/generated/campaign-car.jpg" alt="Funnel and conversion visual" loading="lazy" data-depth="6" />
@@ -193,6 +282,7 @@
             </div>
           </div>
           <div class="work-list" aria-label="Campaign types">
+            <div class="work-lens" id="workLens" aria-hidden="true"></div>
             <button class="is-active" data-shot="0" data-cursor="EXPLORE" data-desc="Full-funnel campaign worlds — from key visual to launch film."><span>01</span>Brand Campaign</button>
             <button data-shot="1" data-cursor="EXPLORE" data-desc="Cinema-grade brand films, built for the big screen and the small one."><span>02</span>Brand Film</button>
             <button data-shot="2" data-cursor="EXPLORE" data-desc="Launches engineered as cultural moments, not announcements."><span>03</span>Product Launch</button>
@@ -209,24 +299,32 @@
         <h2 class="method-title reveal" data-split>How the work <em>gets made.</em></h2>
         <ol class="method-strip">
           <li class="reveal">
-            <p class="method-num">01</p>
-            <h3>Strategy</h3>
-            <p>Find the tension your brand can own.</p>
+            <div class="method-content">
+              <p class="method-num">01</p>
+              <h3>Strategy</h3>
+              <p>Find the tension your brand can own.</p>
+            </div>
           </li>
           <li class="reveal">
-            <p class="method-num">02</p>
-            <h3>World</h3>
-            <p>Build the visual world around it.</p>
+            <div class="method-content">
+              <p class="method-num">02</p>
+              <h3>World</h3>
+              <p>Build the visual world around it.</p>
+            </div>
           </li>
           <li class="reveal">
-            <p class="method-num">03</p>
-            <h3>Production</h3>
-            <p>Shoot, design and craft every asset.</p>
+            <div class="method-content">
+              <p class="method-num">03</p>
+              <h3>Production</h3>
+              <p>Shoot, design and craft every asset.</p>
+            </div>
           </li>
           <li class="reveal">
-            <p class="method-num">04</p>
-            <h3>Motion</h3>
-            <p>Put it in motion — and keep it moving.</p>
+            <div class="method-content">
+              <p class="method-num">04</p>
+              <h3>Motion</h3>
+              <p>Put it in motion — and keep it moving.</p>
+            </div>
           </li>
         </ol>
         <p class="method-note reveal">One team, end to end. No hand-offs, no dilution — the people who dream it are the people who make it.</p>
@@ -238,8 +336,12 @@
         <p class="kicker reveal"><span>04</span> / Final CTA</p>
         <h2 class="reveal" data-split>Got something <em>worth building?</em> Let's make people look.</h2>
         <div class="cta-actions reveal">
-          <a class="btn-solid magnetic" href="mailto:hello@orchi.media" data-cursor="START">Start a project <i>→</i></a>
-          <a class="btn-ghost magnetic" href="#work" data-cursor="VIEW">View the work <i>→</i></a>
+          <a class="btn-solid magnetic liquid-glass-cta" href="mailto:hello@orchi.media" data-cursor="START">
+            <span class="btn-content">Start a project <i>→</i></span>
+          </a>
+          <a class="btn-ghost magnetic liquid-glass-ghost" href="#work" data-cursor="VIEW">
+            <span class="btn-content">View the work <i>→</i></span>
+          </a>
         </div>
         <p class="cta-meta reveal">Orchi Media<br />Bengaluru / India</p>
       </section>
@@ -263,6 +365,14 @@
       <p class="copyright">© 2026 Orchi Media — Bengaluru / India</p>
     </footer>
 
+    <!-- GSAP 3 & ScrollTrigger for Orchestrated Spatial Motion -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- LiquidGL v3.0.0 Shader Engine -->
+    <script src="scripts/liquidGL.js"></script>
+    <!-- LiquidGlass Design System Adapter -->
+    <script src="scripts/liquidGlassSystem.js"></script>
+    <!-- Studio Interactive Logic -->
     <script src="scripts/site.js"></script>
   </body>
 </html>

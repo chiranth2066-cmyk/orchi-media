@@ -54,19 +54,35 @@ function setupHeroReveal() {
    chars that rise in sequence when the reveal fires. */
 function setupCharSplits() {
   document.querySelectorAll("[data-split]").forEach((el) => {
+    let charIndex = 0;
     const walk = (node) => {
       [...node.childNodes].forEach((child) => {
         if (child.nodeType === 3) {
+          const text = child.textContent;
+          if (!text) return;
           const frag = document.createDocumentFragment();
-          let i = 0;
-          for (const ch of child.textContent) {
-            const span = document.createElement("span");
-            span.className = "char";
-            span.textContent = ch === " " ? "\u00a0" : ch;
-            span.style.transitionDelay = `${(i * 22).toFixed(0)}ms`;
-            frag.appendChild(span);
-            i++;
-          }
+          const words = text.split(" ");
+          words.forEach((word, wIdx) => {
+            if (word.length > 0) {
+              const wordSpan = document.createElement("span");
+              wordSpan.className = "word";
+              wordSpan.style.display = "inline-block";
+              wordSpan.style.whiteSpace = "nowrap";
+              for (const ch of word) {
+                const span = document.createElement("span");
+                span.className = "char";
+                span.textContent = ch;
+                span.style.transitionDelay = `${(charIndex * 22).toFixed(0)}ms`;
+                wordSpan.appendChild(span);
+                charIndex++;
+              }
+              frag.appendChild(wordSpan);
+            }
+            if (wIdx < words.length - 1) {
+              frag.appendChild(document.createTextNode(" "));
+              charIndex++;
+            }
+          });
           node.replaceChild(frag, child);
         } else if (child.nodeType === 1 && child.tagName !== "BR") {
           walk(child);
@@ -235,13 +251,187 @@ function setupBook() {
       }, 200);
     }
     book.classList.add("is-open");
+    snapWorkLens(button, true);
   };
+
+  const workList = document.querySelector(".work-list");
+  const workLens = document.getElementById("workLens");
+
+  function snapWorkLens(button, animate = true) {
+    if (!workLens || !button || !workList) return;
+    const listRect = workList.getBoundingClientRect();
+    const btnRect = button.getBoundingClientRect();
+    const top = btnRect.top - listRect.top;
+    const height = btnRect.height;
+    workList.classList.add("has-lens");
+
+    if (animate && window.gsap && !reducedMotion) {
+      gsap.to(workLens, {
+        top: top,
+        height: height,
+        duration: 0.45,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+    } else {
+      workLens.style.top = `${top}px`;
+      workLens.style.height = `${height}px`;
+    }
+  }
 
   bookButtons.forEach((button, index) => {
     button.addEventListener("mouseenter", () => setActive(button, index));
     button.addEventListener("focus", () => setActive(button, index));
   });
-  if (bookButtons[0]) setActive(bookButtons[0], 0);
+  if (bookButtons[0]) {
+    setActive(bookButtons[0], 0);
+    requestAnimationFrame(() => snapWorkLens(bookButtons[0], false));
+  }
+  window.addEventListener(
+    "resize",
+    () => {
+      const active =
+        document.querySelector(".work-list button.is-active") || bookButtons[0];
+      if (active) snapWorkLens(active, false);
+    },
+    { passive: true }
+  );
+}
+
+/* ============ INTERACTIVE NAV INDICATOR ============ */
+function setupNavIndicator() {
+  const nav = document.querySelector(".liquid-glass-nav");
+  const pill = document.querySelector(".nav-indicator-pill");
+  const links = document.querySelectorAll(".main-nav a");
+  if (!nav || !pill || !links.length) return;
+
+  const movePill = (link) => {
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const left = linkRect.left - navRect.left;
+    const width = linkRect.width;
+    pill.style.left = `${left}px`;
+    pill.style.width = `${width}px`;
+    nav.classList.add("has-pill");
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("mouseenter", () => movePill(link));
+    link.addEventListener("focus", () => movePill(link));
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    nav.classList.remove("has-pill");
+  });
+}
+
+/* ============ LIQUID GLASS (LiquidGL v3.0.0 Architecture) ============ */
+function setupLiquidGlass() {
+  if (window.LiquidGlassSystem && typeof window.LiquidGlassSystem.init === "function") {
+    window.LiquidGlassSystem.init();
+  } else if (typeof window.liquidGL === "function") {
+    console.warn("LiquidGlassSystem adapter not found; falling back to direct liquidGL call.");
+  } else {
+    console.warn("liquidGL v3.0.0 library not loaded; falling back to CSS.");
+  }
+}
+
+/* ============ GSAP 3D SPATIAL MOTION & PARALLAX ============ */
+function setupGsapMotion() {
+  if (typeof gsap === "undefined" || reducedMotion) return;
+
+  if (typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // 1. Cinematic Hero Entrance Sequence
+  const introTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+  introTl
+    .fromTo(
+      ".site-header",
+      { y: -30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.1, delay: 0.1 }
+    )
+    .fromTo(
+      ".hero-copy > p",
+      { y: 46, opacity: 0, rotateX: 6 },
+      { y: 0, opacity: 1, rotateX: 0, duration: 1.25 },
+      "-=0.75"
+    )
+    .fromTo(
+      ".hero-craft p",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, stagger: 0.08 },
+      "-=0.9"
+    );
+
+  // 2. Scroll-triggered Spatial Parallax
+  if (typeof ScrollTrigger !== "undefined") {
+    // Parallax depth on service visuals
+    document.querySelectorAll(".service").forEach((service) => {
+      const visual = service.querySelector(".service-visual img");
+      if (visual) {
+        gsap.fromTo(
+          visual,
+          { yPercent: -7, scale: 1.1 },
+          {
+            yPercent: 7,
+            scale: 1.02,
+            ease: "none",
+            scrollTrigger: {
+              trigger: service,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      }
+    });
+
+    // Method items staggered spatial lift
+    const methodItems = document.querySelectorAll(".method-strip li");
+    if (methodItems.length) {
+      gsap.fromTo(
+        methodItems,
+        { opacity: 0, y: 32, rotateX: 8 },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".method-strip",
+            start: "top 82%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // CTA background cinematic zoom-out
+    const ctaBg = document.querySelector(".cta-bg");
+    if (ctaBg) {
+      gsap.fromTo(
+        ctaBg,
+        { scale: 1.16, yPercent: -4 },
+        {
+          scale: 1.0,
+          yPercent: 4,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".cta",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
+  }
 }
 
 function setupReveals() {
@@ -289,5 +479,8 @@ setupBook();
 setupMagnetic();
 setupReveals();
 setupSmoothAnchors();
+setupNavIndicator();
+setupLiquidGlass();
+setupGsapMotion();
 updateScrollState();
 requestAnimationFrame(animate);
