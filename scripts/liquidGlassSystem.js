@@ -142,22 +142,16 @@
       tilt: false,
     });
 
-    // 3. Method Architectural Process Cards (Standard variant)
-    applyGlass(".method-strip li", "standard", {
-      tint: "rgba(14, 14, 18, 0.42)",
-      tiltFactor: 3.5,
-    });
-
-    // 4. Work Section Category Indicator Pill (Featured variant)
-    applyGlass("#workLens", "featured", {
+    // 3. Cinema Controls Bar (Featured variant)
+    applyGlass(".cinema-controls", "featured", {
       refraction: 0.012,
       aberration: 0.20,
       frost: 0.32,
       tilt: false,
-      shadow: false,
+      shadow: true,
     });
 
-    // 5. Final CTA Solid Button (Liquid Crimson Crystal)
+    // 4. Final CTA Solid Button (Liquid Crimson Crystal)
     applyGlass(".liquid-glass-cta", "featured", {
       refraction: 0.014,
       aberration: 0.22,
@@ -165,14 +159,14 @@
       tiltFactor: 4.5,
     });
 
-    // 6. Final CTA Ghost Button (Standard variant)
+    // 5. Final CTA Ghost Button (Standard variant)
     applyGlass(".liquid-glass-ghost", "standard", {
       refraction: 0.008,
       frost: 0.32,
       tiltFactor: 3.5,
     });
 
-    // 7. Auto-bind any elements declaring [data-liquid-glass]
+    // 6. Auto-bind any elements declaring [data-liquid-glass]
     document.querySelectorAll("[data-liquid-glass]").forEach((el) => {
       if (isHeroElement(el)) return;
       const variant = el.getAttribute("data-liquid-glass") || "standard";
@@ -182,10 +176,8 @@
     // Register dynamic background motion so shader snapshots update during continuous scroll/animation
     if (typeof window.liquidGL?.registerDynamic === "function") {
       const dynamicElements = [];
-      const marquee = document.querySelector(".marquee-track");
-      if (marquee) dynamicElements.push(marquee);
-      const bookEl = document.querySelector(".campaign-book");
-      if (bookEl) dynamicElements.push(bookEl);
+      const video = document.getElementById("mainReelVideo");
+      if (video) dynamicElements.push(video);
 
       if (dynamicElements.length) {
         window.liquidGL.registerDynamic(dynamicElements);

@@ -10,12 +10,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link
       href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/site.css" />
@@ -33,9 +34,11 @@
       <nav class="main-nav liquid-glass-nav" aria-label="Primary navigation">
         <div class="nav-content">
           <div class="nav-indicator-pill" aria-hidden="true"></div>
+          <a href="#journal" data-cursor="VIEW">Journal</a>
+          <a href="#reel" data-cursor="VIEW">Reel</a>
           <a href="#services" data-cursor="VIEW">Services</a>
-          <a href="#work" data-cursor="VIEW">Work</a>
-          <a href="#method" data-cursor="VIEW">Method</a>
+          <a href="#testimonials" data-cursor="VIEW">Voices</a>
+          <a href="#archive" data-cursor="VIEW">Archive</a>
           <a href="#contact" data-cursor="VIEW">Contact</a>
         </div>
       </nav>
@@ -45,10 +48,48 @@
           Bengaluru, India
         </span>
       </div>
-      <button class="menu-line" type="button" aria-label="Open navigation" data-cursor="MENU">
+      <button class="menu-line" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileDrawer" data-cursor="MENU">
         <i></i><i></i><i></i>
       </button>
     </header>
+
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <div class="drawer-backdrop" aria-hidden="true"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <a class="brand" href="#hero" data-cursor="ORCHI">
+            <span>ORCHI</span>
+            <small>MEDIA</small>
+          </a>
+          <button class="drawer-close" type="button" aria-label="Close navigation" data-cursor="CLOSE">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <a href="#hero" class="drawer-link"><span>01</span>Home</a>
+          <a href="#journal" class="drawer-link"><span>02</span>Journal</a>
+          <a href="#reel" class="drawer-link"><span>03</span>Reel</a>
+          <a href="#services" class="drawer-link"><span>04</span>Services</a>
+          <a href="#testimonials" class="drawer-link"><span>05</span>Voices</a>
+          <a href="#archive" class="drawer-link"><span>06</span>Archive</a>
+          <a href="#contact" class="drawer-link"><span>07</span>Contact</a>
+        </nav>
+        <div class="drawer-footer">
+          <div class="drawer-status">
+            <span class="live-pulse"></span>
+            <span>Bengaluru, IN • <span class="drawer-clock">--:--</span> IST</span>
+          </div>
+          <div class="drawer-socials">
+            <a href="https://instagram.com/orchi.media" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/company/orchi-media" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://youtube.com/@orchi-media" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section class="hero scene" id="hero" aria-label="Opening shot">
@@ -70,300 +111,725 @@
         </div>
       </section>
 
-      <section class="services scene" id="services" data-scene>
-        <p class="kicker reveal"><span>01</span> / What we do</p>
-        <div class="services-intro">
-          <h2 class="reveal" data-split>We turn brands into the <em>conversation.</em></h2>
-          <p class="lede reveal">From sharp positioning to ideas that travel, we build marketing that makes people stop, pay attention, and take action. No noise. No forgettable campaigns. Just work that moves brands forward.</p>
-          
-          <div class="services-pillars reveal">
-            <span class="pillar">STRATEGY</span>
-            <span class="pillar-sep">/</span>
-            <span class="pillar">CREATIVE</span>
-            <span class="pillar-sep">/</span>
-            <span class="pillar">BRAND</span>
-            <span class="pillar-sep">/</span>
-            <span class="pillar">GROWTH</span>
+      <!-- ============ 02. EDITORIAL BLOG SECTION ============ -->
+      <section class="journal scene" id="journal" data-scene aria-label="Studio Journal">
+        <div class="section-header">
+          <p class="kicker reveal"><span>01</span> / Editorial Journal</p>
+          <div class="section-title-wrap">
+            <h2 class="section-title reveal" data-split>Ideas that cut through the <em>algorithmic noise.</em></h2>
+            <p class="section-lede reveal">Essays, strategic critiques, and production notes from the studio floor. On distinctiveness, cinematic restraint, and creative economics.</p>
           </div>
+        </div>
 
-          <div class="services-circling-wrap reveal">
-            <a class="circling-badge" href="#service-01" data-cursor="EXPLORE" aria-label="Explore Strategy, Creative, Brand, Growth">
-              <div class="circling-orbit-ring" aria-hidden="true"></div>
-              <div class="circling-text-ring">
-                <svg viewBox="0 0 200 200" class="circling-svg" aria-hidden="true">
-                  <defs>
-                    <path id="servicesCirclePath" d="M 100, 100 m -68, 0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0" fill="none" />
-                  </defs>
-                  <text class="circling-svg-text">
-                    <textPath href="#servicesCirclePath" startOffset="0%">
-                      STRATEGY • CREATIVE • BRAND • GROWTH • 
-                    </textPath>
-                  </text>
-                </svg>
+        <div class="journal-spread">
+          <!-- Dominant Lead Article -->
+          <article class="journal-lead reveal" data-article-id="art-01">
+            <div class="journal-media-wrap">
+              <figure class="journal-fig reveal-img" data-parallax>
+                <img src="assets/generated/manifesto-portrait.jpg" alt="Editorial portrait on algorithmic friction" loading="lazy" data-depth="4" />
+                <span class="media-badge">Lead Essay</span>
+              </figure>
+            </div>
+            <div class="journal-lead-content">
+              <div class="article-meta">
+                <span class="meta-tag">Cinematic Direction</span>
+                <span class="meta-sep">•</span>
+                <span class="meta-date">October 2026</span>
+                <span class="meta-sep">•</span>
+                <span class="meta-time">6 min read</span>
               </div>
-              <div class="circling-center">
-                <div class="circling-center-glass">
-                  <svg class="circling-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <polyline points="19 12 12 19 5 12"></polyline>
-                  </svg>
+              <h3 class="article-title" data-split>The Death of Generic Aesthetics: Why Brands Need <em>Friction</em> in the Age of Homogenized Feeds</h3>
+              <p class="article-excerpt">When every algorithm optimizes for the median, polish becomes indistinguishable from wallpaper. Deliberate tension, analog textures, and intentional pacing are the only asymmetric advantages left.</p>
+              <div class="article-footer">
+                <button type="button" class="btn-text read-trigger" data-article="art-01" data-cursor="READ">
+                  <span>Read Full Dispatch</span>
+                  <i>→</i>
+                </button>
+                <span class="article-serial">ORCHI // DISPATCH 041</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Secondary Stacked Dispatches -->
+          <div class="journal-stack">
+            <article class="journal-card reveal" data-article-id="art-02">
+              <figure class="journal-card-media reveal-img">
+                <img src="assets/generated/panel-brand.jpg" alt="Brand architecture diagram" loading="lazy" />
+                <span class="card-num">02</span>
+              </figure>
+              <div class="journal-card-content">
+                <div class="article-meta">
+                  <span class="meta-tag">Brand Strategy</span>
+                  <span class="meta-sep">•</span>
+                  <span class="meta-date">September 2026</span>
+                  <span class="meta-sep">•</span>
+                  <span class="meta-time">4 min read</span>
                 </div>
+                <h4 class="card-title">Positioning Before Pixels: The Mechanics of <em>Cultural Authority</em></h4>
+                <p class="card-excerpt">A visual identity without a strategic point of view is just expensive styling. How tension creates enduring brand memory.</p>
+                <button type="button" class="btn-text read-trigger" data-article="art-02" data-cursor="READ">
+                  <span>Read Dispatch</span> <i>→</i>
+                </button>
               </div>
+            </article>
+
+            <article class="journal-card reveal" data-article-id="art-03">
+              <figure class="journal-card-media reveal-img">
+                <img src="assets/generated/craft-bts.jpg" alt="Production crew on studio set" loading="lazy" />
+                <span class="card-num">03</span>
+              </figure>
+              <div class="journal-card-content">
+                <div class="article-meta">
+                  <span class="meta-tag">Production &amp; Metrics</span>
+                  <span class="meta-sep">•</span>
+                  <span class="meta-date">September 2026</span>
+                  <span class="meta-sep">•</span>
+                  <span class="meta-time">5 min read</span>
+                </div>
+                <h4 class="card-title">The High-Fidelity Funnel: Merging <em>Cinema Craft</em> with Paid Acquisition</h4>
+                <p class="card-excerpt">Why cinema-grade creative assets consistently outperform low-effort UGC in scaling customer lifetime value across luxury verticals.</p>
+                <button type="button" class="btn-text read-trigger" data-article="art-03" data-cursor="READ">
+                  <span>Read Dispatch</span> <i>→</i>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03. FULL-WIDTH CINEMATIC VIDEO SECTION ============ -->
+      <section class="cinema-reel scene" id="reel" data-scene aria-label="Cinematic Video Showcase">
+        <div class="cinema-frame">
+          <video
+            class="cinema-video"
+            id="mainReelVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/generated/cta-city.jpg"
+          >
+            <source src="assets/videos/showreel.mp4" type="video/mp4" />
+            Your browser does not support high-definition HTML5 video playback.
+          </video>
+          <div class="cinema-vignette" aria-hidden="true"></div>
+          
+          <div class="cinema-overlay">
+            <div class="cinema-top">
+              <p class="kicker reveal"><span>02</span> / Motion Direction &amp; Film Production</p>
+              <span class="live-rec-badge" aria-label="Studio reel in playback">
+                <i class="rec-dot"></i> 4K PRORES 4444 • 2.39:1
+              </span>
+            </div>
+
+            <div class="cinema-center reveal">
+              <h2 class="cinema-heading" data-split>Cinema-grade craft built for the big screen and the <em>one in your hand.</em></h2>
+              <p class="cinema-sub">Commercial films, lighting choreography, and digital experiences that command complete attention.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04. SERVICES SECTION (EDITORIAL PRESENTATION) ============ -->
+      <section class="services scene" id="services" data-scene aria-label="Studio Services">
+        <div class="section-header">
+          <p class="kicker reveal"><span>03</span> / Core Disciplines</p>
+          <div class="services-intro">
+            <h2 class="reveal" data-split>We turn brands into the <em>conversation.</em></h2>
+            <p class="lede reveal">From sharp positioning to ideas that travel, we build marketing that makes people stop, pay attention, and take action. No noise. No forgettable campaigns. Just work that moves brands forward.</p>
+          </div>
+        </div>
+
+        <!-- Services Crest Distortion Showcase -->
+        <div class="services-crest-container reveal" data-depth="4">
+          <div class="services-crest-meta">
+            <div class="services-meta-badge">
+              <span class="live-pulse-dot"></span>
+              <span>ORCHI DISCIPLINES // 3D CREST STREAM</span>
+            </div>
+            <p class="services-meta-hint">SCROLL OR DRAG TO GLIDE THROUGH DISCIPLINES • CLICK CARD TO INSPECT</p>
+          </div>
+          <div class="services-crest-stage" id="servicesCrest" data-cursor="DISCIPLINE">
+            <a href="#service-01" class="crest-card-link" aria-label="01 Strategic Architecture">
+              <img src="assets/services/service-strategy.jpg" alt="01 Strategic Architecture" />
+            </a>
+            <a href="#service-02" class="crest-card-link" aria-label="02 Full-Stack Cinema">
+              <img src="assets/services/service-production.jpg" alt="02 Full-Stack Cinema" />
+            </a>
+            <a href="#service-03" class="crest-card-link" aria-label="03 Performance Engine">
+              <img src="assets/services/service-performance.jpg" alt="03 Performance Engine" />
+            </a>
+            <a href="#service-04" class="crest-card-link" aria-label="04 Viral Distribution">
+              <img src="assets/services/service-viral.jpg" alt="04 Viral Distribution" />
+            </a>
+            <a href="#service-05" class="crest-card-link" aria-label="05 Conversion Systems">
+              <img src="assets/services/service-funnels.jpg" alt="05 Conversion Systems" />
+            </a>
+            <a href="#service-06" class="crest-card-link" aria-label="06 Sensory Branding">
+              <img src="assets/services/service-identity.jpg" alt="06 Sensory Branding" />
             </a>
           </div>
         </div>
-        <ol class="service-list">
-          <li class="service reveal" id="service-01">
-            <div class="service-text">
-              <p class="service-num"><span>01</span></p>
-              <h3 data-split>Brand Strategy</h3>
-              <p class="service-tag"><em>Positioning before pixels.</em></p>
-              <div class="service-copy">
-                <p>Before a single frame is shot, we define what your brand stands for, who it speaks to, and why it deserves attention. We dive into your audience, analyse competitors, and uncover the market opportunities that others overlook. The goal is to understand not just what people buy, but what makes them choose one brand over another.</p>
-                <p>Using these insights, we build a strategic foundation that shapes your positioning, messaging, and creative direction. From defining your unique value proposition to developing a distinctive brand voice and visual identity, every element works together to create a consistent and recognisable presence.</p>
-                <div class="service-highlight">
-                  <p>We bring clarity to your brand, turn insights into purposeful creative decisions, and build a foundation for lasting relevance and sustainable growth.</p>
+
+        <!-- Interactive Editorial Catalog -->
+        <div class="services-catalog">
+          <!-- Navigation tabs for fast scanning -->
+          <nav class="services-nav reveal" aria-label="Services selector">
+            <button class="service-nav-btn is-active" type="button" data-service="0" data-cursor="VIEW">
+              <span class="nav-idx">01</span>
+              <span class="nav-label">Brand Strategy</span>
+            </button>
+            <button class="service-nav-btn" type="button" data-service="1" data-cursor="VIEW">
+              <span class="nav-idx">02</span>
+              <span class="nav-label">Content Production</span>
+            </button>
+            <button class="service-nav-btn" type="button" data-service="2" data-cursor="VIEW">
+              <span class="nav-idx">03</span>
+              <span class="nav-label">Performance Marketing</span>
+            </button>
+            <button class="service-nav-btn" type="button" data-service="3" data-cursor="VIEW">
+              <span class="nav-idx">04</span>
+              <span class="nav-label">Social Media</span>
+            </button>
+            <button class="service-nav-btn" type="button" data-service="4" data-cursor="VIEW">
+              <span class="nav-idx">05</span>
+              <span class="nav-label">Funnels &amp; CRO</span>
+            </button>
+          </nav>
+
+          <!-- Service Panels -->
+          <ol class="service-list">
+            <li class="service is-active reveal" id="service-01" data-service-idx="0">
+              <div class="service-text">
+                <p class="service-num"><span>01</span> / Strategy &amp; Positioning</p>
+                <h3 data-split>Brand Strategy</h3>
+                <p class="service-tag"><em>Positioning before pixels.</em></p>
+                <div class="service-copy">
+                  <p>Before a single frame is shot, we define what your brand stands for, who it speaks to, and why it deserves attention. We dive into your audience, analyse competitors, and uncover the market opportunities that others overlook. The goal is to understand not just what people buy, but what makes them choose one brand over another.</p>
+                  <p>Using these insights, we build a strategic foundation that shapes your positioning, messaging, and creative direction. From defining your unique value proposition to developing a distinctive brand voice and visual identity, every element works together to create a consistent and recognisable presence.</p>
+                  <div class="service-highlight">
+                    <p>We bring clarity to your brand, turn insights into purposeful creative decisions, and build a foundation for lasting relevance and sustainable growth.</p>
+                  </div>
+                </div>
+                <div class="service-deliverables">
+                  <p class="deliverables-heading">What We Do</p>
+                  <ul class="service-tags">
+                    <li>Positioning</li>
+                    <li>Market Research</li>
+                    <li>Brand Messaging</li>
+                    <li>Creative Direction</li>
+                    <li>Identity Systems</li>
+                  </ul>
                 </div>
               </div>
-              <div class="service-deliverables">
-                <p class="deliverables-heading">What We Do</p>
-                <ul class="service-tags">
-                  <li>Positioning</li>
-                  <li>Market Research</li>
-                  <li>Brand Messaging</li>
-                  <li>Creative Direction</li>
-                  <li>Identity Systems</li>
-                </ul>
-              </div>
-            </div>
-            <figure class="service-visual reveal-img" data-parallax>
-              <img src="assets/generated/panel-brand.jpg" alt="Brand identity visual" loading="lazy" data-depth="6" />
-            </figure>
-          </li>
-          <li class="service reveal" id="service-02">
-            <div class="service-text">
-              <p class="service-num"><span>02</span></p>
-              <h3 data-split>Content Production</h3>
-              <p class="service-tag"><em>Stories that move.</em></p>
-              <div class="service-copy">
-                <p>We create content that captures attention, communicates value, and gives people a reason to remember your brand. From cinematic brand films and campaign shoots to product photography and short-form videos, every piece is crafted with a clear creative direction and purpose.</p>
-                <p>Our process brings together concept development, visual storytelling, professional production, and precise post-production to turn ideas into compelling visual experiences. We focus on the details that make content stand out — thoughtful composition, intentional lighting, strong narratives, and film-quality editing.</p>
-                <div class="service-highlight">
-                  <p>Whether it's building brand awareness, showcasing a product, or creating content for social media, we produce visuals that feel distinctive, connect with your audience, and make your brand impossible to overlook.</p>
+              <figure class="service-visual reveal-img" data-parallax>
+                <img src="assets/generated/panel-brand.jpg" alt="Brand identity visual" loading="lazy" data-depth="6" />
+              </figure>
+            </li>
+
+            <li class="service reveal" id="service-02" data-service-idx="1">
+              <div class="service-text">
+                <p class="service-num"><span>02</span> / Cinema &amp; Visuals</p>
+                <h3 data-split>Content Production</h3>
+                <p class="service-tag"><em>Stories that move.</em></p>
+                <div class="service-copy">
+                  <p>We create content that captures attention, communicates value, and gives people a reason to remember your brand. From cinematic brand films and campaign shoots to product photography and short-form videos, every piece is crafted with a clear creative direction and purpose.</p>
+                  <p>Our process brings together concept development, visual storytelling, professional production, and precise post-production to turn ideas into compelling visual experiences. We focus on the details that make content stand out — thoughtful composition, intentional lighting, strong narratives, and film-quality editing.</p>
+                  <div class="service-highlight">
+                    <p>Whether it's building brand awareness, showcasing a product, or creating content for social media, we produce visuals that feel distinctive, connect with your audience, and make your brand impossible to overlook.</p>
+                  </div>
+                </div>
+                <div class="service-deliverables">
+                  <p class="deliverables-heading">What We Create</p>
+                  <ul class="service-tags">
+                    <li>Brand Films</li>
+                    <li>Campaign Shoots</li>
+                    <li>Product Photography</li>
+                    <li>Short-Form Content</li>
+                    <li>Video Editing</li>
+                  </ul>
                 </div>
               </div>
-              <div class="service-deliverables">
-                <p class="deliverables-heading">What We Create</p>
-                <ul class="service-tags">
-                  <li>Brand Films</li>
-                  <li>Campaign Shoots</li>
-                  <li>Product Photography</li>
-                  <li>Short-Form Content</li>
-                  <li>Video Editing</li>
-                </ul>
-              </div>
-            </div>
-            <figure class="service-visual reveal-img" data-parallax>
-              <img src="assets/generated/panel-content.jpg" alt="Content production visual" loading="lazy" data-depth="6" />
-            </figure>
-          </li>
-          <li class="service reveal" id="service-03">
-            <div class="service-text">
-              <p class="service-num"><span>03</span></p>
-              <h3 data-split>Performance Marketing</h3>
-              <p class="service-tag"><em>Attention, bought wisely.</em></p>
-              <div class="service-copy">
-                <p>Great creative only works when it reaches the right people. We build and manage data-driven advertising campaigns across Meta, Google, and YouTube, combining strategic targeting with creative experimentation to turn attention into measurable business results.</p>
-                <p>From audience research and campaign planning to ad creation and budget optimisation, every decision is guided by performance. We continuously test new hooks, messaging, and creative formats to understand what resonates, eliminate wasted spend, and scale what works.</p>
-                <div class="service-highlight">
-                  <p>We track the metrics that matter — from clicks and conversions to qualified leads and customer acquisition costs — giving you a clear picture of how your marketing investment contributes to business growth.</p>
+              <figure class="service-visual reveal-img" data-parallax>
+                <img src="assets/generated/panel-content.jpg" alt="Content production visual" loading="lazy" data-depth="6" />
+              </figure>
+            </li>
+
+            <li class="service reveal" id="service-03" data-service-idx="2">
+              <div class="service-text">
+                <p class="service-num"><span>03</span> / Distribution &amp; Scale</p>
+                <h3 data-split>Performance Marketing</h3>
+                <p class="service-tag"><em>Attention, bought wisely.</em></p>
+                <div class="service-copy">
+                  <p>Great creative only works when it reaches the right people. We build and manage data-driven advertising campaigns across Meta, Google, and YouTube, combining strategic targeting with creative experimentation to turn attention into measurable business results.</p>
+                  <p>From audience research and campaign planning to ad creation and budget optimisation, every decision is guided by performance. We continuously test new hooks, messaging, and creative formats to understand what resonates, eliminate wasted spend, and scale what works.</p>
+                  <div class="service-highlight">
+                    <p>We track the metrics that matter — from clicks and conversions to qualified leads and customer acquisition costs — giving you a clear picture of how your marketing investment contributes to business growth.</p>
+                  </div>
+                </div>
+                <div class="service-deliverables">
+                  <p class="deliverables-heading">What We Do</p>
+                  <ul class="service-tags">
+                    <li>Media Buying</li>
+                    <li>Creative Testing</li>
+                    <li>Audience Targeting</li>
+                    <li>Landing Page Optimisation</li>
+                    <li>Conversion Tracking</li>
+                    <li>Performance Reporting</li>
+                  </ul>
                 </div>
               </div>
-              <div class="service-deliverables">
-                <p class="deliverables-heading">What We Do</p>
-                <ul class="service-tags">
-                  <li>Media Buying</li>
-                  <li>Creative Testing</li>
-                  <li>Audience Targeting</li>
-                  <li>Landing Page Optimisation</li>
-                  <li>Conversion Tracking</li>
-                  <li>Performance Reporting</li>
-                </ul>
+              <figure class="service-visual reveal-img" data-parallax>
+                <img src="assets/generated/panel-digital.jpg" alt="Performance marketing visual" loading="lazy" data-depth="6" />
+              </figure>
+            </li>
+
+            <li class="service reveal" id="service-04" data-service-idx="3">
+              <div class="service-text">
+                <p class="service-num"><span>04</span> / Culture &amp; Engine</p>
+                <h3 data-split>Social Media Management</h3>
+                <p class="service-tag">
+                  <em>Never go quiet.</em>
+                  <span class="live-pulse" title="Always-on engine" aria-label="Always-on engine"></span>
+                </p>
+                <div class="service-copy">
+                  <p>Brands are built through consistent presence, meaningful conversations, and content that gives people a reason to come back. We build and manage your social media presence with a clear strategy, turning your platforms into active communities where your brand stays relevant and top of mind.</p>
+                  <p>From content planning and creative direction to reels, stories, and community engagement, we make sure every post has a purpose. We study audience behaviour, identify emerging trends, and develop platform-specific content that reflects your brand's personality while keeping your audience engaged.</p>
+                  <div class="service-highlight">
+                    <p>Beyond posting, we pay attention to what works. By tracking engagement, reach, and audience growth, we continuously refine our approach to strengthen your online presence and turn followers into a community that trusts your brand.</p>
+                  </div>
+                </div>
+                <div class="service-deliverables">
+                  <p class="deliverables-heading">What We Do</p>
+                  <ul class="service-tags">
+                    <li>Content Strategy</li>
+                    <li>Content Calendars</li>
+                    <li>Reels &amp; Shorts</li>
+                    <li>Community Management</li>
+                    <li>Trend Analysis</li>
+                    <li>Social Media Growth</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <figure class="service-visual reveal-img" data-parallax>
-              <img src="assets/generated/panel-digital.jpg" alt="Performance marketing visual" loading="lazy" data-depth="6" />
-            </figure>
-          </li>
-          <li class="service reveal" id="service-04">
-            <div class="service-text">
-              <p class="service-num"><span>04</span></p>
-              <h3 data-split>Social Media Management</h3>
-              <p class="service-tag">
-                <em>Never go quiet.</em>
-                <span class="live-pulse" title="Always-on engine" aria-label="Always-on engine"></span>
+              <figure class="service-visual reveal-img" data-parallax>
+                <img src="assets/generated/panel-growth.jpg" alt="Social media visual" loading="lazy" data-depth="6" />
+              </figure>
+            </li>
+
+            <li class="service reveal" id="service-05" data-service-idx="4">
+              <div class="service-text">
+                <p class="service-num"><span>05</span> / Revenue Architecture</p>
+                <h3 data-split>Funnels &amp; CRO</h3>
+                <p class="service-tag"><em>Turn attention into revenue.</em></p>
+                <div class="service-copy">
+                  <p>Clicks don't pay bills — customers do. We design conversion-focused journeys that guide people from their first interaction with your brand to taking meaningful action. From high-converting landing pages and strategic email sequences to compelling offers, every touchpoint is built to reduce friction and move prospects closer to a purchase.</p>
+                  <p>We analyse how users interact with your website, identify where potential customers drop off, and uncover opportunities to improve the experience. Through A/B testing, behavioural insights, and continuous optimisation, we refine each stage of the funnel to improve conversion rates and make better use of your existing traffic.</p>
+                  <div class="service-highlight">
+                    <p>The result is a more efficient path from discovery to decision — turning marketing spend into measurable business outcomes and helping your brand grow without relying solely on more traffic.</p>
+                  </div>
+                </div>
+                <div class="service-deliverables">
+                  <p class="deliverables-heading">What We Do</p>
+                  <ul class="service-tags">
+                    <li>Landing Pages</li>
+                    <li>Sales Funnels</li>
+                    <li>Email Automation</li>
+                    <li>Conversion Optimisation</li>
+                    <li>A/B Testing</li>
+                    <li>Analytics</li>
+                  </ul>
+                </div>
+              </div>
+              <figure class="service-visual reveal-img" data-parallax>
+                <img src="assets/generated/campaign-car.jpg" alt="Funnel and conversion visual" loading="lazy" data-depth="6" />
+              </figure>
+            </li>
+          </ol>
+          <div class="services-bridge reveal">
+            <a href="#testimonials" class="btn-ghost" data-cursor="VIEW">View verified client proof &amp; testimonials <i>↓</i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04. TESTIMONIALS & CLIENT VOICES (CREST DISTORTION ENGINE) ============ -->
+      <section class="testimonials scene" id="testimonials" data-scene data-fx-pin aria-label="Client Testimonials and Growth Proof">
+        <div class="testimonials-ui-wrapper">
+          <div class="section-header">
+            <p class="kicker reveal"><span>04</span> / Client Proof &amp; Endorsements</p>
+            <div class="section-title-wrap">
+              <h2 class="section-title reveal" data-split>What happens when brands <em>refuse to blend in.</em></h2>
+              <p class="section-lede reveal">
+                Uncompromising creative execution backed by ruthless performance metrics. Explore verified testimonials from founders and market leaders who scaled with ORCHI.
               </p>
-              <div class="service-copy">
-                <p>Brands are built through consistent presence, meaningful conversations, and content that gives people a reason to come back. We build and manage your social media presence with a clear strategy, turning your platforms into active communities where your brand stays relevant and top of mind.</p>
-                <p>From content planning and creative direction to reels, stories, and community engagement, we make sure every post has a purpose. We study audience behaviour, identify emerging trends, and develop platform-specific content that reflects your brand's personality while keeping your audience engaged.</p>
-                <div class="service-highlight">
-                  <p>Beyond posting, we pay attention to what works. By tracking engagement, reach, and audience growth, we continuously refine our approach to strengthen your online presence and turn followers into a community that trusts your brand.</p>
-                </div>
-              </div>
-              <div class="service-deliverables">
-                <p class="deliverables-heading">What We Do</p>
-                <ul class="service-tags">
-                  <li>Content Strategy</li>
-                  <li>Content Calendars</li>
-                  <li>Reels &amp; Shorts</li>
-                  <li>Community Management</li>
-                  <li>Trend Analysis</li>
-                  <li>Social Media Growth</li>
-                </ul>
-              </div>
-            </div>
-            <figure class="service-visual reveal-img" data-parallax>
-              <img src="assets/generated/panel-growth.jpg" alt="Social media visual" loading="lazy" data-depth="6" />
-            </figure>
-          </li>
-          <li class="service reveal" id="service-05">
-            <div class="service-text">
-              <p class="service-num"><span>05</span></p>
-              <h3 data-split>Funnels &amp; CRO</h3>
-              <p class="service-tag"><em>Turn attention into revenue.</em></p>
-              <div class="service-copy">
-                <p>Clicks don't pay bills — customers do. We design conversion-focused journeys that guide people from their first interaction with your brand to taking meaningful action. From high-converting landing pages and strategic email sequences to compelling offers, every touchpoint is built to reduce friction and move prospects closer to a purchase.</p>
-                <p>We analyse how users interact with your website, identify where potential customers drop off, and uncover opportunities to improve the experience. Through A/B testing, behavioural insights, and continuous optimisation, we refine each stage of the funnel to improve conversion rates and make better use of your existing traffic.</p>
-                <div class="service-highlight">
-                  <p>The result is a more efficient path from discovery to decision — turning marketing spend into measurable business outcomes and helping your brand grow without relying solely on more traffic.</p>
-                </div>
-              </div>
-              <div class="service-deliverables">
-                <p class="deliverables-heading">What We Do</p>
-                <ul class="service-tags">
-                  <li>Landing Pages</li>
-                  <li>Sales Funnels</li>
-                  <li>Email Automation</li>
-                  <li>Conversion Optimisation</li>
-                  <li>A/B Testing</li>
-                  <li>Analytics</li>
-                </ul>
-              </div>
-            </div>
-            <figure class="service-visual reveal-img" data-parallax>
-              <img src="assets/generated/campaign-car.jpg" alt="Funnel and conversion visual" loading="lazy" data-depth="6" />
-            </figure>
-          </li>
-        </ol>
-      </section>
-
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>Brand Strategy <i>—</i></span><span class="outline">Content <i>—</i></span><span>Performance <i>—</i></span><span class="outline">Social <i>—</i></span><span class="accent">Funnels <i>—</i></span>
-          <span>Brand Strategy <i>—</i></span><span class="outline">Content <i>—</i></span><span>Performance <i>—</i></span><span class="outline">Social <i>—</i></span><span class="accent">Funnels <i>—</i></span>
-        </div>
-      </div>
-
-      <section class="work scene" id="work" data-scene>
-        <p class="kicker reveal"><span>02</span> / The Work</p>
-        <p class="work-intro reveal">Selected campaigns — hover to open the book.</p>
-        <div class="book-wrap">
-          <div class="campaign-book" data-cursor="DRAG">
-            <div class="book-page page-left">
-              <img src="assets/generated/work-spread-left.jpg" alt="Brand campaign spread" loading="lazy" />
-            </div>
-            <div class="book-spine"></div>
-            <div class="book-page page-right">
-              <img src="assets/generated/work-spread-right.jpg" alt="Brand film spread" loading="lazy" />
-            </div>
-            <div class="book-cover">
-              <strong>ORCHI</strong>
-              <span>Creative Growth Studio</span>
             </div>
           </div>
-          <div class="work-list" aria-label="Campaign types">
-            <div class="work-lens" id="workLens" aria-hidden="true"></div>
-            <button class="is-active" data-shot="0" data-cursor="EXPLORE" data-desc="Full-funnel campaign worlds — from key visual to launch film."><span>01</span>Brand Campaign</button>
-            <button data-shot="1" data-cursor="EXPLORE" data-desc="Cinema-grade brand films, built for the big screen and the small one."><span>02</span>Brand Film</button>
-            <button data-shot="2" data-cursor="EXPLORE" data-desc="Launches engineered as cultural moments, not announcements."><span>03</span>Product Launch</button>
-            <button data-shot="3" data-cursor="EXPLORE" data-desc="Sites and interactive stories designed to convert."><span>04</span>Digital Experience</button>
-            <button data-shot="4" data-cursor="EXPLORE" data-desc="Always-on social content that compounds attention."><span>05</span>Social Campaign</button>
-            <p class="work-desc reveal" aria-live="polite">Full-funnel campaign worlds — from key visual to launch film.</p>
-            <p class="drag-hint"><i>↔</i>Drag / Explore</p>
+
+          <div class="testimonials-meta-strip reveal">
+            <div class="meta-strip-item">
+              <span class="live-pulse-dot"></span>
+              <span class="meta-strip-label">STAGE ARCHITECTURE:</span>
+              <span class="meta-strip-val">MASKED LIGHT GALLERY // 3D CREST STREAM</span>
+            </div>
+            <div class="meta-strip-item">
+              <span class="meta-strip-label">INTERACTION:</span>
+              <span class="meta-strip-val">SCROLL TO ADVANCE // CLICK CARD TO EXPAND CASE</span>
+            </div>
+            <div class="meta-strip-item">
+              <span class="meta-strip-label">PORTFOLIO:</span>
+              <span class="meta-strip-val">8 VERIFIED ENTERPRISE DEPLOYMENTS</span>
+            </div>
+          </div>
+
+          <!-- Curated Client Proof & Endorsements Ledger -->
+          <div class="client-proof-ledger reveal" data-depth="4">
+            <!-- Client 1: Kaizen -->
+            <article class="client-proof-card" data-cursor="KAIZEN">
+              <div class="proof-card-top">
+                <span class="proof-category-tag">DTC LUXURY APPAREL</span>
+                <span class="proof-metric-pill">+340% ROAS</span>
+              </div>
+              <blockquote class="proof-quote">
+                “Orchi rebuilt our creative engine from scratch. In 90 days, acquisition costs dropped 42% while scaling monthly revenue 3.4x.”
+              </blockquote>
+              <div class="proof-author-box">
+                <div>
+                  <h3 class="proof-author-name">Devon Vance</h3>
+                  <p class="proof-author-role">Founder &amp; CEO, Kaizen Luxury Apparel</p>
+                </div>
+                <a href="#articleModal" data-article-id="case-kaizen" class="proof-case-btn read-trigger">Case <i>→</i></a>
+              </div>
+            </article>
+
+            <!-- Client 2: Nexus Systems -->
+            <article class="client-proof-card" data-cursor="NEXUS">
+              <div class="proof-card-top">
+                <span class="proof-category-tag">AUTONOMOUS HARDWARE</span>
+                <span class="proof-metric-pill">$24M SERIES B</span>
+              </div>
+              <blockquote class="proof-quote">
+                “Their cinematic production does not look like tech marketing—it looks like cinema. Series B lead investors cited our launch film directly.”
+              </blockquote>
+              <div class="proof-author-box">
+                <div>
+                  <h3 class="proof-author-name">Elena Rostova</h3>
+                  <p class="proof-author-role">VP Brand &amp; Growth, Nexus Systems</p>
+                </div>
+                <a href="#articleModal" data-article-id="case-nexus" class="proof-case-btn read-trigger">Case <i>→</i></a>
+              </div>
+            </article>
+
+            <!-- Client 3: Aura Bio Labs -->
+            <article class="client-proof-card" data-cursor="AURA">
+              <div class="proof-card-top">
+                <span class="proof-category-tag">BIO-NUTRITION &amp; DTC</span>
+                <span class="proof-metric-pill">6.8X ROAS</span>
+              </div>
+              <blockquote class="proof-quote">
+                “The liquid aesthetic and ruthless conversion focus gave our brand an unfair monopoly in a saturated global market.”
+              </blockquote>
+              <div class="proof-author-box">
+                <div>
+                  <h3 class="proof-author-name">Marcus Thorne</h3>
+                  <p class="proof-author-role">Co-Founder &amp; CEO, Aura Bio Labs</p>
+                </div>
+                <a href="#articleModal" data-article-id="case-aura" class="proof-case-btn read-trigger">Case <i>→</i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Verified Studio Impact Metrics Strip -->
+          <div class="testimonials-impact-strip reveal">
+            <div class="impact-stat-item">
+              <span class="impact-num">+340%</span>
+              <span class="impact-label">Peak Campaign ROAS</span>
+            </div>
+            <div class="impact-stat-item">
+              <span class="impact-num">$120M+</span>
+              <span class="impact-label">Enterprise Pipeline Created</span>
+            </div>
+            <div class="impact-stat-item">
+              <span class="impact-num">-42%</span>
+              <span class="impact-label">Blended CAC Containment</span>
+            </div>
+            <div class="impact-stat-item">
+              <span class="impact-num">100%</span>
+              <span class="impact-label">Annual Retainer Retention</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crest Distortion WebGL Stage (Client Testimonial Stream) -->
+        <div class="testimonials-crest-stage" id="testimonialsCrest" data-cursor="CASE STUDY">
+          <a href="#articleModal" data-article-id="case-kaizen" class="crest-card-link read-trigger" aria-label="Kaizen Luxury Apparel Case Study">
+            <img src="assets/testimonials/testimonial-kaizen.jpg" alt="Kaizen Luxury Apparel — Devon Vance Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-nexus" class="crest-card-link read-trigger" aria-label="Nexus Autonomous Systems Case Study">
+            <img src="assets/testimonials/testimonial-nexus.jpg" alt="Nexus Systems — Elena Rostova Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-aura" class="crest-card-link read-trigger" aria-label="Aura Bio Labs Case Study">
+            <img src="assets/testimonials/testimonial-aura.jpg" alt="Aura Bio Labs — Marcus Thorne Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-lumina" class="crest-card-link read-trigger" aria-label="Lumina Virtual Production Case Study">
+            <img src="assets/testimonials/testimonial-lumina.jpg" alt="Lumina Studios — Sophia Chen Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-solaris" class="crest-card-link read-trigger" aria-label="Solaris Electric Mobility Case Study">
+            <img src="assets/testimonials/testimonial-solaris.jpg" alt="Solaris Mobility — Arjun Mehta Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-hyperion" class="crest-card-link read-trigger" aria-label="Hyperion Spatial Acoustics Case Study">
+            <img src="assets/testimonials/testimonial-hyperion.jpg" alt="Hyperion Audio — Chloe Dupont Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-vanguard" class="crest-card-link read-trigger" aria-label="Vanguard Spatial Architecture Case Study">
+            <img src="assets/testimonials/testimonial-vanguard.jpg" alt="Vanguard Atelier — Liam Vance Testimonial" />
+          </a>
+          <a href="#articleModal" data-article-id="case-chronos" class="crest-card-link read-trigger" aria-label="Chronos Haute Horlogerie Case Study">
+            <img src="assets/testimonials/testimonial-chronos.jpg" alt="Chronos Geneva — Vivienne Laurent Testimonial" />
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ 05. COMBINED BLOG CONTENT SECTION (ARCHIVE DOSSIER) ============ -->
+      <section class="archive scene" id="archive" data-scene aria-label="Studio Research Archive">
+        <div class="section-header">
+          <p class="kicker reveal"><span>05</span> / Research Dossier &amp; Archive</p>
+          <div class="section-title-wrap">
+            <h2 class="section-title reveal" data-split>Strategic perspectives &amp; <em>creative frameworks.</em></h2>
+            <p class="section-lede reveal">A curated index of studio research, tactical teardowns, and creative methodologies. Filter by discipline or scan the complete collection.</p>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="archive-filter-wrap reveal">
+          <div class="archive-filters" role="tablist" aria-label="Filter research dossier">
+            <button class="filter-pill is-active" type="button" data-filter="all" role="tab" aria-selected="true">All Dispatches (05)</button>
+            <button class="filter-pill" type="button" data-filter="strategy" role="tab" aria-selected="false">Strategy</button>
+            <button class="filter-pill" type="button" data-filter="production" role="tab" aria-selected="false">Production</button>
+            <button class="filter-pill" type="button" data-filter="growth" role="tab" aria-selected="false">Growth &amp; CRO</button>
+            <button class="filter-pill" type="button" data-filter="culture" role="tab" aria-selected="false">Culture</button>
+          </div>
+        </div>
+
+        <!-- Interactive Dossier Table -->
+        <div class="archive-table reveal" role="region" aria-label="Article entries">
+          <!-- Floating Cursor Hover Preview Image -->
+          <div class="archive-preview-card" id="archiveHoverCard" aria-hidden="true">
+            <img src="assets/generated/detail-eye.jpg" alt="" id="archivePreviewImg" />
+          </div>
+
+          <div class="archive-entry" data-category="strategy" data-article-id="art-04" data-img="assets/generated/detail-eye.jpg">
+            <div class="entry-index">#04</div>
+            <div class="entry-content">
+              <span class="entry-category">Strategy</span>
+              <h3 class="entry-title">Sensory Brand Codes: Establishing Visual Recall in Sub-Second Attention Spans</h3>
+              <p class="entry-desc">Deconstructing how distinctive color contrast, sound frequencies, and typographic tension create instant recognition before conscious cognitive processing.</p>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-date">Aug 2026</span>
+              <span class="entry-time">4 min read</span>
+              <button type="button" class="entry-read read-trigger" data-article="art-04" data-cursor="READ">
+                <span>View</span> <i>→</i>
+              </button>
+            </div>
+          </div>
+
+          <div class="archive-entry" data-category="production" data-article-id="art-05" data-img="assets/generated/studio-set.jpg">
+            <div class="entry-index">#05</div>
+            <div class="entry-content">
+              <span class="entry-category">Production</span>
+              <h3 class="entry-title">Color Grading as Emotional Architecture: Behind the DaVinci Studio Pipeline</h3>
+              <p class="entry-desc">Film stock emulation, controlled highlight roll-offs, and spectral halation techniques that communicate luxury perception without conscious viewer effort.</p>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-date">Aug 2026</span>
+              <span class="entry-time">7 min read</span>
+              <button type="button" class="entry-read read-trigger" data-article="art-05" data-cursor="READ">
+                <span>View</span> <i>→</i>
+              </button>
+            </div>
+          </div>
+
+          <div class="archive-entry" data-category="growth" data-article-id="art-06" data-img="assets/generated/campaign-car.jpg">
+            <div class="entry-index">#06</div>
+            <div class="entry-content">
+              <span class="entry-category">Growth &amp; CRO</span>
+              <h3 class="entry-title">Funnels with Soul: Converting Paid Traffic Without Degrading Premium Brand Equity</h3>
+              <p class="entry-desc">Bridging the divide between high-craft editorial brand perception and rigorous conversion rate optimisation. Tactics from 48 executed campaigns.</p>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-date">Jul 2026</span>
+              <span class="entry-time">5 min read</span>
+              <button type="button" class="entry-read read-trigger" data-article="art-06" data-cursor="READ">
+                <span>View</span> <i>→</i>
+              </button>
+            </div>
+          </div>
+
+          <div class="archive-entry" data-category="culture" data-article-id="art-07" data-img="assets/generated/studio-edit.jpg">
+            <div class="entry-index">#07</div>
+            <div class="entry-content">
+              <span class="entry-category">Culture</span>
+              <h3 class="entry-title">The Always-On Engine: Sustainable Social Content Systems for Fast-Moving Brands</h3>
+              <p class="entry-desc">Why reactive trend-chasing burns creative capital. Building serialized, platform-native content formats that compound audience retention over 12 months.</p>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-date">Jun 2026</span>
+              <span class="entry-time">4 min read</span>
+              <button type="button" class="entry-read read-trigger" data-article="art-07" data-cursor="READ">
+                <span>View</span> <i>→</i>
+              </button>
+            </div>
+          </div>
+
+          <div class="archive-entry" data-category="strategy" data-article-id="art-08" data-img="assets/generated/perspective-brutal.jpg">
+            <div class="entry-index">#08</div>
+            <div class="entry-content">
+              <span class="entry-category">Strategy</span>
+              <h3 class="entry-title">The Mechanics of Cultural Authority: From Niche Credibility to Category Dominance</h3>
+              <p class="entry-desc">A deep dive into how visionary founders leverage tension, polarizing viewpoints, and editorial precision to transcend commoditized price competition.</p>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-date">May 2026</span>
+              <span class="entry-time">6 min read</span>
+              <button type="button" class="entry-read read-trigger" data-article="art-08" data-cursor="READ">
+                <span>View</span> <i>→</i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="method scene" id="method" data-scene>
-        <p class="kicker reveal"><span>03</span> / Method</p>
-        <h2 class="method-title reveal" data-split>How the work <em>gets made.</em></h2>
-        <ol class="method-strip">
-          <li class="reveal">
-            <div class="method-content">
-              <p class="method-num">01</p>
-              <h3>Strategy</h3>
-              <p>Find the tension your brand can own.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <div class="method-content">
-              <p class="method-num">02</p>
-              <h3>World</h3>
-              <p>Build the visual world around it.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <div class="method-content">
-              <p class="method-num">03</p>
-              <h3>Production</h3>
-              <p>Shoot, design and craft every asset.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <div class="method-content">
-              <p class="method-num">04</p>
-              <h3>Motion</h3>
-              <p>Put it in motion — and keep it moving.</p>
-            </div>
-          </li>
-        </ol>
-        <p class="method-note reveal">One team, end to end. No hand-offs, no dilution — the people who dream it are the people who make it.</p>
-      </section>
-
-      <section class="cta scene" id="contact" data-scene>
+      <!-- ============ 06. LINKS AND FOOTER SECTION ============ -->
+      <section class="cta scene" id="contact" data-scene aria-label="Contact and studio links">
         <img class="cta-bg" src="assets/generated/cta-city.jpg" alt="" aria-hidden="true" loading="lazy" />
         <div class="cta-shade" aria-hidden="true"></div>
-        <p class="kicker reveal"><span>04</span> / Final CTA</p>
-        <h2 class="reveal" data-split>Got something <em>worth building?</em> Let's make people look.</h2>
-        <div class="cta-actions reveal">
-          <a class="btn-solid magnetic liquid-glass-cta" href="mailto:hello@orchi.media" data-cursor="START">
-            <span class="btn-content">Start a project <i>→</i></span>
-          </a>
-          <a class="btn-ghost magnetic liquid-glass-ghost" href="#work" data-cursor="VIEW">
-            <span class="btn-content">View the work <i>→</i></span>
-          </a>
+        <p class="kicker reveal"><span>05</span> / Initiate Project</p>
+        
+        <div class="cta-container">
+          <div class="cta-statement reveal">
+            <h2 data-split>Got something <em>worth building?</em> Let's make people look.</h2>
+            <p class="cta-lede">We take on a limited number of brand and production partnerships each quarter to maintain cinema-level craftsmanship. Inquiries are reviewed within 24 hours.</p>
+          </div>
+
+          <div class="cta-actions reveal">
+            <a class="btn-solid magnetic liquid-glass-cta" href="mailto:hello@orchi.media?subject=New%20Project%20Inquiry%20%E2%80%94%20Orchi%20Media" data-cursor="START">
+              <span class="btn-content">Start a project <i>→</i></span>
+            </a>
+            <button class="btn-ghost magnetic liquid-glass-ghost copy-email-btn" type="button" data-cursor="COPY" aria-label="Copy email address to clipboard">
+              <span class="btn-content">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span class="copy-text">hello@orchi.media</span>
+              </span>
+              <span class="copy-toast" aria-live="polite">Copied!</span>
+            </button>
+          </div>
+
+          <!-- Studio Metadata & Live Local Time Bar -->
+          <div class="studio-meta-bar reveal">
+            <div class="meta-col">
+              <span class="meta-label">Location</span>
+              <span class="meta-val">Bengaluru, India • 12.9716° N, 77.5946° E</span>
+            </div>
+            <div class="meta-col">
+              <span class="meta-label">Studio Time</span>
+              <span class="meta-val"><span id="footerClock">--:--:--</span> IST</span>
+            </div>
+            <div class="meta-col">
+              <span class="meta-label">Availability</span>
+              <span class="meta-val status-val"><span class="live-pulse"></span> Open for Q4 2026</span>
+            </div>
+          </div>
         </div>
-        <p class="cta-meta reveal">Orchi Media<br />Bengaluru / India</p>
+
+        <footer class="site-footer reveal">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="#hero" data-cursor="TOP">
+                <span>ORCHI</span>
+                <small>MEDIA</small>
+              </a>
+              <p class="brand-tagline">Creative growth studio for brands that refuse to blend in.</p>
+            </div>
+
+            <div class="footer-nav-col">
+              <span class="col-title">Navigation</span>
+              <nav aria-label="Footer internal navigation">
+                <a href="#hero">01 Home</a>
+                <a href="#journal">02 Journal</a>
+                <a href="#reel">03 Reel</a>
+                <a href="#services">04 Services</a>
+                <a href="#testimonials">05 Voices</a>
+                <a href="#archive">06 Archive</a>
+                <a href="#contact">07 Contact</a>
+              </nav>
+            </div>
+
+            <div class="footer-nav-col">
+              <span class="col-title">Dispatches</span>
+              <nav aria-label="Footer articles">
+                <a href="#journal">Lead Essay</a>
+                <a href="#journal">Cultural Authority</a>
+                <a href="#journal">Cinema Funnels</a>
+                <a href="#archive">Research Archive</a>
+              </nav>
+            </div>
+
+            <div class="footer-nav-col">
+              <span class="col-title">Network</span>
+              <nav aria-label="Social media channels">
+                <a href="https://instagram.com/orchi.media" target="_blank" rel="noopener noreferrer">Instagram <i>↗</i></a>
+                <a href="https://linkedin.com/company/orchi-media" target="_blank" rel="noopener noreferrer">LinkedIn <i>↗</i></a>
+                <a href="https://youtube.com/@orchi-media" target="_blank" rel="noopener noreferrer">YouTube <i>↗</i></a>
+                <a href="https://x.com/orchi_media" target="_blank" rel="noopener noreferrer">X (Twitter) <i>↗</i></a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p class="copyright">© 2026 ORCHI MEDIA STUDIO. ALL RIGHTS RESERVED.</p>
+            <p class="footer-credo">BUILT IN BENGALURU FOR THE WORLD.</p>
+          </div>
+        </footer>
       </section>
     </main>
 
-    <footer class="credits scene">
-      <h2 class="reveal" data-split>Make something <em>they can't ignore.</em></h2>
-      <div class="credits-grid">
-        <nav aria-label="Footer navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#method">Method</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <nav aria-label="Social navigation">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">YouTube</a>
-        </nav>
+    <!-- Dispatch Reader Modal (Zero-redirect immersive reading experience) -->
+    <aside class="article-modal" id="articleModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalArticleTitle">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-window">
+        <header class="modal-header">
+          <div class="modal-meta-row">
+            <span class="modal-category" id="modalArticleCategory">DISPATCH</span>
+            <span class="meta-sep">•</span>
+            <span class="modal-time" id="modalArticleTime">5 min read</span>
+          </div>
+          <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close article" data-cursor="CLOSE">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </header>
+
+        <div class="modal-body">
+          <h2 class="modal-title" id="modalArticleTitle">Article Headline</h2>
+          <div class="modal-lead" id="modalArticleLead"></div>
+          <figure class="modal-featured-img">
+            <img id="modalArticleImg" src="" alt="" />
+          </figure>
+          <div class="modal-prose" id="modalArticleBody">
+            <!-- Dynamic article prose injected by site.js -->
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <p class="modal-colophon">ORCHI MEDIA RESEARCH INITIATIVE // BENGALURU, INDIA</p>
+          <button class="btn-ghost modal-close-bottom" type="button">Back to website <i>↑</i></button>
+        </footer>
       </div>
-      <p class="copyright">© 2026 Orchi Media — Bengaluru / India</p>
-    </footer>
+    </aside>
 
     <!-- GSAP 3 & ScrollTrigger for Orchestrated Spatial Motion -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -372,6 +838,8 @@
     <script src="scripts/liquidGL.js"></script>
     <!-- LiquidGlass Design System Adapter -->
     <script src="scripts/liquidGlassSystem.js"></script>
+    <!-- Crest Distortion WebGL Shader Engine -->
+    <script src="scripts/crestDistortion.js"></script>
     <!-- Studio Interactive Logic -->
     <script src="scripts/site.js"></script>
   </body>
